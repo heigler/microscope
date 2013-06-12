@@ -1,3 +1,3 @@
 Meteor.publish('posts', () ->
-  return Posts.find()
+  Posts.find()
 )
