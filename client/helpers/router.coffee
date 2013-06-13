@@ -3,6 +3,9 @@ Meteor.Router.add(
   '/posts/:_id':
     to: 'postPage'
     and: (id) -> Session.set('currentPostId', id)
+  '/posts/:_id/edit/':
+    to: 'postEdit'
+    and: (id) -> Session.set('currentPostId', id)
   '/submit/': 'postSubmit'
 )
 
