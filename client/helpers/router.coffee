@@ -14,8 +14,13 @@ Meteor.Router.filters(
     if Meteor.user()
       page
     else if Meteor.loggingIn()
-      return 'loading'
+      'loading'
     else
       'accessDenied'
+
+  'clearErrors': (page) ->
+    clearErrors()
+    page
 )
-Meteor.Router.filter('requireLogin', only: 'postSubmit')
+Meteor.Router.filter('requireLogin', {only: 'postSubmit'})
+Meteor.Router.filter('clearErrors')
