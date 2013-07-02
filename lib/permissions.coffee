@@ -1,2 +1,2 @@
 @ownsDocument = (userId, doc) ->
-  doc and doc.userId == userId
+  doc and doc.userId is userId

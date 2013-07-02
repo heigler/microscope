@@ -13,7 +13,7 @@ Template.postSubmit.events(
         throwError(error.reason)
         if error.error == 302
           Meteor.Router.to('postPage', error.details)
-        else
-          Meteor.Router.to('postPage', id)
+      else
+        Meteor.Router.to('postPage', id)
     )
 )

@@ -21,5 +21,9 @@ Meteor.methods(
     # update the post with the number of comments
     Posts.update(comment.postId, {$inc: {commentsCount: 1}})
 
-    return Comments.insert(comment)
+    # create the comment, save id
+    comment._id = Comments.insert(comment)
+    # create a notification for the post owner
+    createCommentNotification(comment)
+    return comment._id
 )
